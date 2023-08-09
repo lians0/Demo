@@ -1,0 +1,24 @@
+server:
+  port: 50100
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: back-brain-platform
+    system: smarthome
+  cache:
+    type: generic
+  datasource:
+    db1: # 数据源1
+      jdbc-url: jdbc:mysql://192.168.31.45:3306/iot_db1?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&serverTimezone=UTC
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    db2: # 数据源2
+      jdbc-url: jdbc:mysql://192.168.31.45:3306/iot_db2?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&serverTimezone=UTC
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  autoconfigure:
+    exclude: com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure  #去除druid配置
